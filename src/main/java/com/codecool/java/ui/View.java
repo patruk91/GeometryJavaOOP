@@ -17,6 +17,11 @@ public class View {
         System.out.print(message);
     }
 
+    public void printMessageWithNewLine(String message) {
+        System.out.println(message);
+    }
+
+
     public void printQuestion(String question) {
         System.out.print(question + "?: ");
     }
@@ -26,7 +31,7 @@ public class View {
     }
 
     public void printShapes() {
-        System.out.println("What shape you would like to add?\n" +
+        System.out.println("Shapes:\n" +
                 "   (1) Circle\n" +
                 "   (2) Triangle\n" +
                 "   (3) Equilateral triangle\n" +
