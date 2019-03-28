@@ -25,7 +25,7 @@ public class ShapeList {
     }
 
     public Shape getLargestShapeByPerimeter() {
-        Shape biggestPerimeter = shapes.get(0);
+        Shape biggestPerimeter = this.shapes.get(0);
         for (Shape shape : this.shapes) {
             if (shape.calculatePerimeter() > biggestPerimeter.calculatePerimeter()) {
                 biggestPerimeter = shape;
@@ -35,7 +35,7 @@ public class ShapeList {
     }
 
     public Shape getLargestShapeByArea() {
-        Shape biggestArea = shapes.get(0);
+        Shape biggestArea = this.shapes.get(0);
         for (Shape shape : this.shapes) {
             if (shape.calculateArea() > biggestArea.calculateArea()) {
                 biggestArea = shape;

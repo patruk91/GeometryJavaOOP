@@ -9,12 +9,12 @@ public class RegularPentagon extends Shape {
 
     @Override
     public double calculateArea() {
-        return (Math.pow(a, 2)* Math.sqrt(5 * (5 + 2 * Math.sqrt(5)))) / 4;
+        return (Math.pow(this.a, 2)* Math.sqrt(5 * (5 + 2 * Math.sqrt(5)))) / 4;
     }
 
     @Override
     public double calculatePerimeter() {
-        return 5 * a;
+        return 5 * this.a;
     }
 
     @Override
