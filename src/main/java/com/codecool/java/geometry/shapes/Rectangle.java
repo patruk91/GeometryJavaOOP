@@ -28,4 +28,12 @@ public class Rectangle extends Shape {
     public String getPerimeterFormula() {
         return "2×a+2×b";
     }
+
+    float getA() {
+        return a;
+    }
+
+    float getB() {
+        return b;
+    }
 }

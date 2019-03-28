@@ -26,4 +26,8 @@ public class RegularPentagon extends Shape {
     public String getPerimeterFormula() {
         return "5×a";
     }
+
+    float getA() {
+        return a;
+    }
 }

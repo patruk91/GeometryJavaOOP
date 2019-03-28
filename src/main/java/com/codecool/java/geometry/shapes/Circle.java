@@ -26,4 +26,8 @@ public class Circle extends Shape {
     public String getPerimeterFormula() {
         return "2×π×r";
     }
+
+    float getR() {
+        return r;
+    }
 }

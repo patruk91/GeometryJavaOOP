@@ -32,4 +32,16 @@ public class Triangle extends Shape {
     public String getPerimeterFormula() {
         return "a+b+c";
     }
+
+    float getA() {
+        return a;
+    }
+
+    float getB() {
+        return b;
+    }
+
+    float getC() {
+        return c;
+    }
 }
