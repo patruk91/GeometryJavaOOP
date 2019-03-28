@@ -16,26 +16,37 @@ public class Main {
 
 
 	    while (isRunning) {
+	        view.clearScreen();
             view.printMenu();
             int option = reader.getIntFromUser("Option", 0, 5);
+            view.clearScreen();
 
             switch (option) {
                 case 1:
                     view.printShapes();
                     int addOption = reader.getIntFromUser("Option", 1, 6);
+                    view.clearScreen();
                     handler.handleAddShape(addOption, shapes);
                     break;
                 case 2:
-                    // Show all shapes
+                    shapes.getShapesTable(); //fix function get here string and print it in viewer
+                    reader.promptEnterKey();
+
                     break;
                 case 3:
-                    // Show shape with the largest perimeter
+                    view.printMessage("Largest perimeter: " + shapes.getLargestShapeByPerimeter().calculatePerimeter() + "\n");
+                    reader.promptEnterKey();
                     break;
                 case 4:
-                    // Show shape with the largest area
+                    view.printMessage("Largest area: " + shapes.getLargestShapeByArea().calculateArea() + "\n");
+                    reader.promptEnterKey();
                     break;
                 case 5:
-                    // Show formulas
+                    view.printShapes();
+                    int formulaOption = reader.getIntFromUser("Option", 1, 6);
+                    view.clearScreen();
+                    handler.handleFormulas(formulaOption);
+                    reader.promptEnterKey();
                     break;
                 case 0:
                     isRunning = false;

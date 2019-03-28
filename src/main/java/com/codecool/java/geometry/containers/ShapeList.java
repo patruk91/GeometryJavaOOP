@@ -1,5 +1,6 @@
 package com.codecool.java.geometry.containers;
 
+import com.codecool.java.geometry.shapes.Circle;
 import com.codecool.java.geometry.shapes.Shape;
 
 import java.util.ArrayList;
@@ -25,22 +26,32 @@ public class ShapeList {
     }
 
     public Shape getLargestShapeByPerimeter() {
-        Shape biggestPerimeter = this.shapes.get(0);
-        for (Shape shape : this.shapes) {
-            if (shape.calculatePerimeter() > biggestPerimeter.calculatePerimeter()) {
-                biggestPerimeter = shape;
+        if (this.shapes.size() > 0) {
+            Shape biggestPerimeter = this.shapes.get(0);
+            for (Shape shape : this.shapes) {
+                if (shape.calculatePerimeter() > biggestPerimeter.calculatePerimeter()) {
+                    biggestPerimeter = shape;
+                }
             }
+            return biggestPerimeter;
+        } else {
+            return new Circle();
         }
-        return biggestPerimeter;
+
     }
 
     public Shape getLargestShapeByArea() {
-        Shape biggestArea = this.shapes.get(0);
-        for (Shape shape : this.shapes) {
-            if (shape.calculateArea() > biggestArea.calculateArea()) {
-                biggestArea = shape;
+        if (this.shapes.size() > 0) {
+            Shape biggestArea = this.shapes.get(0);
+            for (Shape shape : this.shapes) {
+                if (shape.calculateArea() > biggestArea.calculateArea()) {
+                    biggestArea = shape;
+                }
             }
+            return biggestArea;
+        } else {
+            return new Circle();
         }
-        return biggestArea;
+
     }
 }

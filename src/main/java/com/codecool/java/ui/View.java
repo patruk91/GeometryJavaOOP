@@ -39,4 +39,9 @@ public class View {
                 "   (5) Square\n" +
                 "   (6) Regular pentagon");
     }
+
+    public void clearScreen() {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
+    }
 }

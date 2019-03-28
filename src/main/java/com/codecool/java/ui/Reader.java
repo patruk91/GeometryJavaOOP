@@ -62,4 +62,9 @@ public class Reader {
         }
         return userInteger;
     }
+
+    public void promptEnterKey(){
+        view.printMessage("Press 'ENTER' to continue...");
+        readString();
+    }
 }
