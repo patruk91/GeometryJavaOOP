@@ -12,6 +12,8 @@ public class RegularPentagon extends Shape {
         this.a = a;
     }
 
+    public RegularPentagon() {}
+
     @Override
     public double calculateArea() {
         return (Math.pow(this.a, 2)* Math.sqrt(5 * (5 + 2 * Math.sqrt(5)))) / 4;

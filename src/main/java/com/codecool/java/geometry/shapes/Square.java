@@ -7,4 +7,6 @@ public class Square extends Rectangle {
         super(a, a);
         this.a = a;
     }
+
+    public Square() {}
 }

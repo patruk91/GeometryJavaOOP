@@ -8,4 +8,6 @@ public class EquilateralTriangle extends Triangle {
         this.a = a;
     }
 
+    public EquilateralTriangle() {}
+
 }

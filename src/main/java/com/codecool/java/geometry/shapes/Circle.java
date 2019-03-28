@@ -12,6 +12,9 @@ public class Circle extends Shape {
         this.r = r;
     }
 
+    public Circle() {
+    }
+
     @Override
     public double calculateArea() {
         return Math.PI * Math.pow(this.r, 2);

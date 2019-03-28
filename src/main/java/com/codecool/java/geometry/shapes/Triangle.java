@@ -16,6 +16,8 @@ public class Triangle extends Shape {
         this.c = c;
     }
 
+    public Triangle(){}
+
     @Override
     public double calculateArea() {
         float s = (this.a + this.b + this.c) / 2;
