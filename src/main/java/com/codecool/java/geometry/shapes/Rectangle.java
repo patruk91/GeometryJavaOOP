@@ -1,10 +1,15 @@
 package com.codecool.java.geometry.shapes;
 
+import com.codecool.java.NotYetImplementedException;
+
 public class Rectangle extends Shape {
     private float a;
     private float b;
 
     public Rectangle(float a, float b) {
+        if (!Shape.checkIfArgsGreaterThanZero(a, b)) {
+            throw new NotYetImplementedException();
+        }
         this.a = a;
         this.b = b;
     }

@@ -1,11 +1,16 @@
 package com.codecool.java.geometry.shapes;
 
+import com.codecool.java.NotYetImplementedException;
+
 public class Triangle extends Shape {
     private float a;
     private float b;
     private float c;
 
     public Triangle(float a, float b, float c) {
+        if (!Shape.checkIfArgsGreaterThanZero(a, b, c)) {
+            throw new NotYetImplementedException();
+        }
         this.a = a;
         this.b = b;
         this.c = c;

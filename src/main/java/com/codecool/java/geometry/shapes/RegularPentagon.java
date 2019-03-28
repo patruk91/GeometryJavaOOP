@@ -1,9 +1,14 @@
 package com.codecool.java.geometry.shapes;
 
+import com.codecool.java.NotYetImplementedException;
+
 public class RegularPentagon extends Shape {
     private float a;
 
     public RegularPentagon(float a) {
+        if (!Shape.checkIfArgsGreaterThanZero(a)) {
+            throw new NotYetImplementedException();
+        }
         this.a = a;
     }
 
