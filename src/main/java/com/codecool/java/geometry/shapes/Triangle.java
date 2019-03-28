@@ -13,13 +13,13 @@ public class Triangle extends Shape {
 
     @Override
     public double calculateArea() {
-        float s = (a + b + c) / 2;
-        return Math.sqrt(s * (s -a) * (s - b) * (s - c));
+        float s = (this.a + this.b + this.c) / 2;
+        return Math.sqrt(s * (s - this.a) * (s - this.b) * (s - this.c));
     }
 
     @Override
     public double calculatePerimeter() {
-        return a + b + c;
+        return this.a + this.b + this.c;
     }
 
     @Override
