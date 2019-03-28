@@ -58,5 +58,40 @@ public class Handler {
         }
     }
 
+    public void handleFormulas(int option) {
+        switch (option) {
+            case 1:
+                Circle circle = new Circle();
+                view.printMessageWithNewLine("Circle area formula: " + circle.getAreaFormula());
+                view.printMessageWithNewLine("Circle perimeter formula: " + circle.getPerimeterFormula());
+                break;
+            case 2:
+                Triangle triangle = new Triangle();
+                view.printMessageWithNewLine("Triangle area formula: " + triangle.getAreaFormula());
+                view.printMessageWithNewLine("Triangle perimeter formula: " + triangle.getPerimeterFormula());
+                break;
+            case 3:
+                EquilateralTriangle equilateralTriangle = new EquilateralTriangle();
+                view.printMessageWithNewLine("Equilateral triangle area formula: " + equilateralTriangle.getAreaFormula());
+                view.printMessageWithNewLine("Equilateral triangle perimeter formula: " + equilateralTriangle.getPerimeterFormula());
+                break;
+            case 4:
+                Rectangle rectangle = new Rectangle();
+                view.printMessageWithNewLine("Rectangle area formula: " + rectangle.getAreaFormula());
+                view.printMessageWithNewLine("Rectangle perimeter formula: " + rectangle.getPerimeterFormula());
+                break;
+            case 5:
+                Square square = new Square();
+                view.printMessageWithNewLine("Square area formula: " + square.getAreaFormula());
+                view.printMessageWithNewLine("Square perimeter formula: " + square.getPerimeterFormula());
+                break;
+            case 6:
+                RegularPentagon regularPentagon = new RegularPentagon();
+                view.printMessageWithNewLine("Regular pentagon area formula: " + regularPentagon.getAreaFormula());
+                view.printMessageWithNewLine("Regular pentagon formula: " + regularPentagon.getPerimeterFormula());
+                break;
+        }
+    }
+
 
 }
