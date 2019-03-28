@@ -24,4 +24,14 @@ public class View {
     public void printError(String error) {
         System.out.println(("Error: " + error));
     }
+
+    public void printShapes() {
+        System.out.println("What shape you would like to add?\n" +
+                "   (1) Circle\n" +
+                "   (2) Triangle\n" +
+                "   (3) Equilateral triangle\n" +
+                "   (4) Rectangle\n" +
+                "   (5) Square\n" +
+                "   (6) Regular pentagon");
+    }
 }

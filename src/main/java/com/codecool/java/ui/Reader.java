@@ -25,6 +25,7 @@ public class Reader {
         while (!(answerIsCorrect)){
             this.view.printQuestion(question);
             userInput = this.readString();
+
             if (this.validator.validateString(userInput) && this.validator.isNumeric(userInput)){
                 userInteger = Integer.parseInt(userInput);
                 if (this.validator.isNumberInRange(start, end, userInteger)){

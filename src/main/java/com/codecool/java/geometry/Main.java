@@ -19,7 +19,7 @@ public class Main {
 
             switch (option) {
                 case 1:
-                    // Add new shape
+                    view.printShapes();
                     break;
                 case 2:
                     // Show all shapes
