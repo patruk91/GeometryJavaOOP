@@ -1,9 +1,14 @@
 package com.codecool.java.geometry.shapes;
 
+import com.codecool.java.NotYetImplementedException;
+
 public class Circle extends Shape {
     private float r;
 
     public Circle(float r) {
+        if (!Shape.checkIfArgsGreaterThanZero(r)) {
+            throw new NotYetImplementedException();
+        }
         this.r = r;
     }
 

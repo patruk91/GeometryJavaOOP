@@ -38,6 +38,11 @@ public abstract class Shape {
      * @return true if any of args are greater than 0
      */
     public static boolean checkIfArgsGreaterThanZero(float... args) {
-        throw new NotYetImplementedException();
+        for (float arg : args) {
+            if (arg <= 0) {
+                throw new NotYetImplementedException();
+            }
+        }
+        return true;
     }
 }
