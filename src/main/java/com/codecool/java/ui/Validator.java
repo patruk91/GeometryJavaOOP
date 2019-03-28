@@ -3,7 +3,7 @@ package com.codecool.java.ui;
 public class Validator {
 
     public boolean validateString(String input) {
-        return !input.isBlank();
+        return !input.isEmpty();
     }
 
     public boolean isNumeric(String input) {

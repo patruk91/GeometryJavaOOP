@@ -16,4 +16,12 @@ public class View {
     public void printMessage(String message) {
         System.out.print(message);
     }
+
+    public void printQuestion(String question) {
+        System.out.print(question + "?: ");
+    }
+
+    public void printError(String error) {
+        System.out.println(("Error: " + error));
+    }
 }

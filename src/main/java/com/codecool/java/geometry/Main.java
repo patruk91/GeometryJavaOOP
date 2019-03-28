@@ -1,16 +1,21 @@
 package com.codecool.java.geometry;
 
 import com.codecool.java.geometry.containers.ShapeList;
+import com.codecool.java.ui.Reader;
+import com.codecool.java.ui.View;
 
 public class Main {
 
     public static void main(String[] args) {
+        View view = new View();
+        Reader reader = new Reader();
 	    ShapeList shapes = new ShapeList();
 	    boolean isRunning = true;
 
-        // TODO: implement user interaction here. You can change the code below
+
 	    while (isRunning) {
-	        int option = 0; // TODO: get option from user
+            view.printMenu();
+            int option = reader.getIntFromUser("Option", 0, 5);
 
             switch (option) {
                 case 1:
