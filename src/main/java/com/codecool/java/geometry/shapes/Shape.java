@@ -3,10 +3,13 @@ package com.codecool.java.geometry.shapes;
 
 import com.codecool.java.NotYetImplementedException;
 
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
+
 /**
  * This is a abstract class representing geometrical shape.
  */
-public abstract class Shape {
+public abstract class Shape implements ClassName{
     /**
      * Calculates shape's area.
      * @return area of the shape
@@ -45,4 +48,17 @@ public abstract class Shape {
         }
         return true;
     }
+
+    public int[] tableLength() {
+        DecimalFormat df = new DecimalFormat("#.####");
+        df.setRoundingMode(RoundingMode.CEILING);
+        int placesAfterDecimal = 6;
+        int[] tableColumns = {getClassName().length(), toString().length(),
+                df.format(calculatePerimeter()).length() + placesAfterDecimal, getPerimeterFormula().length(),
+                df.format(calculateArea()).length() + placesAfterDecimal, getAreaFormula().length()};
+        return tableColumns;
+    }
+
+    @Override
+    public abstract String toString();
 }

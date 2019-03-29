@@ -5,14 +5,14 @@ import com.codecool.java.NotYetImplementedException;
 public class Circle extends Shape {
     private float r;
 
+    public Circle() {
+    }
+
     public Circle(float r) {
         if (!Shape.checkIfArgsGreaterThanZero(r)) {
             throw new NotYetImplementedException();
         }
         this.r = r;
-    }
-
-    public Circle() {
     }
 
     @Override
@@ -38,4 +38,11 @@ public class Circle extends Shape {
     float getR() {
         return r;
     }
+
+    @Override
+    public String toString() {
+        return getClass().getSimpleName() + ", r = " + this.r;
+    }
+
+
 }

@@ -7,6 +7,8 @@ public class Triangle extends Shape {
     private float b;
     private float c;
 
+    public Triangle(){}
+
     public Triangle(float a, float b, float c) {
         if (!Shape.checkIfArgsGreaterThanZero(a, b, c)) {
             throw new NotYetImplementedException();
@@ -15,8 +17,6 @@ public class Triangle extends Shape {
         this.b = b;
         this.c = c;
     }
-
-    public Triangle(){}
 
     @Override
     public double calculateArea() {
@@ -31,8 +31,7 @@ public class Triangle extends Shape {
 
     @Override
     public String getAreaFormula() {
-        return "s = (a+b+c)/2\n" +
-                "sqrt(s×(s-a)×(s-b)×(s-c)";
+        return "s = (a+b+c)/2; sqrt(s×(s-a)×(s-b)×(s-c)";
     }
 
     @Override
@@ -50,5 +49,10 @@ public class Triangle extends Shape {
 
     float getC() {
         return c;
+    }
+
+    @Override
+    public String toString() {
+        return getClass().getSimpleName() + ", a = " + this.a + ", b = " + this.b + ", c = " + this.c;
     }
 }

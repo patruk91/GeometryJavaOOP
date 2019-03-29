@@ -5,14 +5,14 @@ import com.codecool.java.NotYetImplementedException;
 public class RegularPentagon extends Shape {
     private float a;
 
+    public RegularPentagon() {}
+
     public RegularPentagon(float a) {
         if (!Shape.checkIfArgsGreaterThanZero(a)) {
             throw new NotYetImplementedException();
         }
         this.a = a;
     }
-
-    public RegularPentagon() {}
 
     @Override
     public double calculateArea() {
@@ -36,5 +36,10 @@ public class RegularPentagon extends Shape {
 
     float getA() {
         return a;
+    }
+
+    @Override
+    public String toString() {
+        return getClass().getSimpleName() + ", a = " + this.a;
     }
 }

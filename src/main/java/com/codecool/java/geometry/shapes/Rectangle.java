@@ -6,6 +6,8 @@ public class Rectangle extends Shape {
     private float a;
     private float b;
 
+    public Rectangle() {}
+
     public Rectangle(float a, float b) {
         if (!Shape.checkIfArgsGreaterThanZero(a, b)) {
             throw new NotYetImplementedException();
@@ -13,8 +15,6 @@ public class Rectangle extends Shape {
         this.a = a;
         this.b = b;
     }
-
-    public Rectangle() {}
 
     @Override
     public double calculateArea() {
@@ -42,5 +42,10 @@ public class Rectangle extends Shape {
 
     float getB() {
         return b;
+    }
+
+    @Override
+    public String toString() {
+        return getClass().getSimpleName() + ", a = " + this.a + ", b = " + this.b;
     }
 }
