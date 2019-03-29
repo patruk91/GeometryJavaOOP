@@ -34,6 +34,7 @@ public class ShapeList {
             return biggestPerimeter;
         } else {
             return new Circle();
+            //ask about return
         }
     }
 
@@ -52,65 +53,8 @@ public class ShapeList {
     }
 
     public String getShapesTable() {
-        String format = "";
-        int sum = 0;
-
-        for (int columnWidth : getColumnsWidth()) {
-            format += "%-" + columnWidth + "s |";
-            sum += columnWidth;
-        }
-        format += "%n";
-        return getTableString(format, sum);
-    }
-
-    private String getTableString(String format, int sum) {
-        StringBuilder stringBuilder = new StringBuilder();
-        int extraSpaces = 7 + 7; //vertical line, spaces
-        int i = 0;
-
-        stringBuilder.append(horizontalLine(sum, extraSpaces));
-        stringBuilder.append(getHeaderString(format));
-        stringBuilder.append(horizontalLine(sum, extraSpaces));
-        for (Shape line : this.shapes) {
-            String tableRow = String.format(format, "| " + i,
-                    line.getClassName(), line.toString(), decimalFormat(line.calculatePerimeter()),
-                    line.getPerimeterFormula(), decimalFormat(line.calculateArea()), line.getAreaFormula());
-            stringBuilder.append(tableRow);
-
-            i++;
-            stringBuilder.append(horizontalLine(sum, extraSpaces));
-        }
-        return stringBuilder.toString();
-    }
-
-    private String getHeaderString(String format) {
-        String[] headers = {"| idx", "Class", "toString", "Perimeter", "Formula", "Area", "Formula"};
-        return String.format(format, headers);
-    }
-
-    private String horizontalLine(int sum , int extraSpaces) {
-        return "-".repeat(sum + extraSpaces) + "\n";
-    }
-
-
-    private String decimalFormat(double number) {
-        DecimalFormat df = new DecimalFormat("#.0000");
-        df.setRoundingMode(RoundingMode.CEILING);
-        return df.format(number);
-    }
-
-    private int[] getColumnsWidth() {
-        int[] columnsWidth = {5, 5, 8, 9, 7, 4, 7};
-        // numbers due to headers length in table
-
-        for (Shape shape : this.shapes) {
-            for (int i = 0; i < shape.calculateColumnsWidth().length; i++) {
-                if (shape.calculateColumnsWidth()[i] > columnsWidth[i + 1]) {
-                    columnsWidth[i + 1] = shape.calculateColumnsWidth()[i];
-                }
-            }
-        }
-        return columnsWidth;
+       TableFormatter tableFormatter = new TableFormatter(this.shapes);
+        return tableFormatter.getTableString(tableFormatter.getFormat(), tableFormatter.getSum());
     }
 }
 
