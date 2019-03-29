@@ -35,7 +35,6 @@ public class ShapeList {
         } else {
             return new Circle();
         }
-
     }
 
     public Shape getLargestShapeByArea() {
@@ -54,58 +53,64 @@ public class ShapeList {
 
     public String getShapesTable() {
         String format = "";
-        int extraSpaces = 3;
+        int sum = 0;
 
         for (int columnWidth : getColumnsWidth()) {
-            format += "%-" + (columnWidth + extraSpaces) + "s |";
+            format += "%-" + columnWidth + "s |";
+            sum += columnWidth;
         }
         format += "%n";
-        int i = 0;
-        DecimalFormat df = new DecimalFormat("#.0000");
-        df.setRoundingMode(RoundingMode.CEILING);
-
-        System.out.println("-".repeat(sumColumns() + extraSpaces * 11 + 2));
-        for (Shape line : this.shapes) {
-            System.out.printf(format, "| " + i,
-                    line.getClassName(), line.toString(), df.format(line.calculatePerimeter()),
-                    line.getPerimeterFormula(), df.format(line.calculateArea()), line.getAreaFormula());
-            i++;
-            System.out.println("-".repeat(sumColumns() + extraSpaces * 11 + 2));
-        }
-
-        return "make a table";
+        return getTableString(format, sum);
     }
 
-    private int sumColumns() {
-        int sum = 0;
-        for (int number : getColumnsWidth()) {
-            sum += number;
+    private String getTableString(String format, int sum) {
+        StringBuilder stringBuilder = new StringBuilder();
+        int extraSpaces = 7 + 7; //vertical line, spaces
+        int i = 0;
+
+        stringBuilder.append(horizontalLine(sum, extraSpaces));
+        stringBuilder.append(getHeaderString(format));
+        stringBuilder.append(horizontalLine(sum, extraSpaces));
+        for (Shape line : this.shapes) {
+            String tableRow = String.format(format, "| " + i,
+                    line.getClassName(), line.toString(), decimalFormat(line.calculatePerimeter()),
+                    line.getPerimeterFormula(), decimalFormat(line.calculateArea()), line.getAreaFormula());
+            stringBuilder.append(tableRow);
+
+            i++;
+            stringBuilder.append(horizontalLine(sum, extraSpaces));
         }
-        return sum;
+        return stringBuilder.toString();
+    }
+
+    private String getHeaderString(String format) {
+        String[] headers = {"| idx", "Class", "toString", "Perimeter", "Formula", "Area", "Formula"};
+        return String.format(format, headers);
+    }
+
+    private String horizontalLine(int sum , int extraSpaces) {
+        return "-".repeat(sum + extraSpaces) + "\n";
+    }
+
+
+    private String decimalFormat(double number) {
+        DecimalFormat df = new DecimalFormat("#.0000");
+        df.setRoundingMode(RoundingMode.CEILING);
+        return df.format(number);
     }
 
     private int[] getColumnsWidth() {
-        int[] columnsWidth = getHeaderColumnsLenght();
+        int[] columnsWidth = {5, 5, 8, 9, 7, 4, 7};
+        // numbers due to headers length in table
 
         for (Shape shape : this.shapes) {
-            for (int i = 0; i < shape.tableLength().length; i++) {
-                if (shape.tableLength()[i] > columnsWidth[i + 1]) {
-                    columnsWidth[i + 1] = shape.tableLength()[i];
+            for (int i = 0; i < shape.calculateColumnsWidth().length; i++) {
+                if (shape.calculateColumnsWidth()[i] > columnsWidth[i + 1]) {
+                    columnsWidth[i + 1] = shape.calculateColumnsWidth()[i];
                 }
             }
         }
-
         return columnsWidth;
-    }
-
-    private int[] getHeaderColumnsLenght() {
-        int[] headersLength = new int[7];
-        String[] headers = {"idx", "Class", "toString", "Perimeter", "Formula", "Area", "Formula"};
-
-        for (int i = 0; i < headers.length; i++) {
-            headersLength[i] = headers[i].length();
-        }
-        return headersLength;
     }
 }
 

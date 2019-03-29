@@ -49,14 +49,15 @@ public abstract class Shape implements ClassName{
         return true;
     }
 
-    public int[] tableLength() {
+    public int[] calculateColumnsWidth() {
         DecimalFormat df = new DecimalFormat("#.####");
         df.setRoundingMode(RoundingMode.CEILING);
         int placesAfterDecimal = 6;
-        int[] tableColumns = {getClassName().length(), toString().length(),
+
+        int[] tableColumnsWidth = {getClassName().length(), toString().length(),
                 df.format(calculatePerimeter()).length() + placesAfterDecimal, getPerimeterFormula().length(),
                 df.format(calculateArea()).length() + placesAfterDecimal, getAreaFormula().length()};
-        return tableColumns;
+        return tableColumnsWidth;
     }
 
     @Override
