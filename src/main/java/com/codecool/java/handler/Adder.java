@@ -13,7 +13,8 @@ public class Adder {
     }
     
     public void handleAddShape(int option, ShapeList shapeList) {
-        float minValue = 0;
+        float minValue = -5; //ask to handle exception or do it that way:
+                             //by method getFloatParameters in Reader
 
         switch (option) {
             case 1:

@@ -41,10 +41,15 @@ public abstract class Shape implements ClassName{
      * @return true if any of args are greater than 0
      */
     public static boolean checkIfArgsGreaterThanZero(float... args) {
-        for (float arg : args) {
-            if (arg <= 0) {
-                throw new NotYetImplementedException();
+        try {
+            for (float arg: args) {
+                if (arg <= 0) {
+                    throw new NotYetImplementedException();
+                }
             }
+        } catch (IllegalArgumentException e) {
+            System.out.println("ERROR: One or more of shape parameters are zero or less.");
+            return false;
         }
         return true;
     }

@@ -8,10 +8,9 @@ public class RegularPentagon extends Shape {
     public RegularPentagon() {}
 
     public RegularPentagon(float a) {
-        if (!Shape.checkIfArgsGreaterThanZero(a)) {
-            throw new NotYetImplementedException();
+        if (Shape.checkIfArgsGreaterThanZero(a)) {
+            this.a = a;
         }
-        this.a = a;
     }
 
     @Override

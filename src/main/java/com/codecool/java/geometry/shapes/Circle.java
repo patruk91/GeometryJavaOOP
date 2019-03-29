@@ -9,10 +9,9 @@ public class Circle extends Shape {
     }
 
     public Circle(float r) {
-        if (!Shape.checkIfArgsGreaterThanZero(r)) {
-            throw new NotYetImplementedException();
+        if (Shape.checkIfArgsGreaterThanZero(r)) {
+            this.r = r;
         }
-        this.r = r;
     }
 
     @Override

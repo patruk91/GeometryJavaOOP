@@ -9,11 +9,10 @@ public class Rectangle extends Shape {
     public Rectangle() {}
 
     public Rectangle(float a, float b) {
-        if (!Shape.checkIfArgsGreaterThanZero(a, b)) {
-            throw new NotYetImplementedException();
+        if (Shape.checkIfArgsGreaterThanZero(a, b)) {
+            this.a = a;
+            this.b = b;
         }
-        this.a = a;
-        this.b = b;
     }
 
     @Override

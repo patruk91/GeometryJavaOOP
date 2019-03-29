@@ -10,12 +10,11 @@ public class Triangle extends Shape {
     public Triangle(){}
 
     public Triangle(float a, float b, float c) {
-        if (!Shape.checkIfArgsGreaterThanZero(a, b, c)) {
-            throw new NotYetImplementedException();
+        if (Shape.checkIfArgsGreaterThanZero(a, b, c)) {
+            this.a = a;
+            this.b = b;
+            this.c = c;
         }
-        this.a = a;
-        this.b = b;
-        this.c = c;
     }
 
     @Override
