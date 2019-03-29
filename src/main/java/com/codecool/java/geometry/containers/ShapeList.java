@@ -53,7 +53,35 @@ public class ShapeList {
     }
 
     public String getShapesTable() {
+        String format = "";
+        int extraSpaces = 3;
+
+        for (int columnWidth : getColumnsWidth()) {
+            format += "%-" + (columnWidth + extraSpaces) + "s |";
+        }
+        format += "%n";
+        int i = 0;
+        DecimalFormat df = new DecimalFormat("#.0000");
+        df.setRoundingMode(RoundingMode.CEILING);
+
+        System.out.println("-".repeat(sumColumns() + extraSpaces * 11 + 2));
+        for (Shape line : this.shapes) {
+            System.out.printf(format, "| " + i,
+                    line.getClassName(), line.toString(), df.format(line.calculatePerimeter()),
+                    line.getPerimeterFormula(), df.format(line.calculateArea()), line.getAreaFormula());
+            i++;
+            System.out.println("-".repeat(sumColumns() + extraSpaces * 11 + 2));
+        }
+
         return "make a table";
+    }
+
+    private int sumColumns() {
+        int sum = 0;
+        for (int number : getColumnsWidth()) {
+            sum += number;
+        }
+        return sum;
     }
 
     private int[] getColumnsWidth() {
