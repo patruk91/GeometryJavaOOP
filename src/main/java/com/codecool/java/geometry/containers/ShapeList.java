@@ -3,6 +3,8 @@ package com.codecool.java.geometry.containers;
 import com.codecool.java.geometry.shapes.Circle;
 import com.codecool.java.geometry.shapes.Shape;
 
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,10 +21,6 @@ public class ShapeList {
 
     public Shape getShapeAt(int index) {
         return shapes.get(index);
-    }
-
-    public String getShapesTable() {
-        return "make a table";
     }
 
     public Shape getLargestShapeByPerimeter() {
@@ -52,6 +50,34 @@ public class ShapeList {
         } else {
             return new Circle();
         }
+    }
 
+    public String getShapesTable() {
+        return "make a table";
+    }
+
+    private int[] getColumnsWidth() {
+        int[] columnsWidth = getHeaderColumnsLenght();
+
+        for (Shape shape : this.shapes) {
+            for (int i = 0; i < shape.tableLength().length; i++) {
+                if (shape.tableLength()[i] > columnsWidth[i + 1]) {
+                    columnsWidth[i + 1] = shape.tableLength()[i];
+                }
+            }
+        }
+
+        return columnsWidth;
+    }
+
+    private int[] getHeaderColumnsLenght() {
+        int[] headersLength = new int[7];
+        String[] headers = {"idx", "Class", "toString", "Perimeter", "Formula", "Area", "Formula"};
+
+        for (int i = 0; i < headers.length; i++) {
+            headersLength[i] = headers[i].length();
+        }
+        return headersLength;
     }
 }
+
