@@ -64,7 +64,7 @@ public class Reader {
     }
 
     public void promptEnterKey(){
-        view.printMessage("Press 'ENTER' to continue...");
+        this.view.printMessage("Press 'ENTER' to continue...");
         readString();
     }
 }

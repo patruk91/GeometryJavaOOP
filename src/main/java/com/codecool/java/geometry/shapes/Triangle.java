@@ -40,15 +40,15 @@ public class Triangle extends Shape {
     }
 
     float getA() {
-        return a;
+        return this.a;
     }
 
     float getB() {
-        return b;
+        return this.b;
     }
 
     float getC() {
-        return c;
+        return this.c;
     }
 
     @Override

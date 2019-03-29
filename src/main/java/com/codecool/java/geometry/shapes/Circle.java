@@ -36,7 +36,7 @@ public class Circle extends Shape {
     }
 
     float getR() {
-        return r;
+        return this.r;
     }
 
     @Override

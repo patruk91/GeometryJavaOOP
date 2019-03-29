@@ -36,47 +36,47 @@ public class ShapeFormulas {
 
     private void circleFormula() {
         Circle circle = new Circle();
-        view.printMessageWithNewLine("Circle area formula: "
+        this.view.printMessageWithNewLine("Circle area formula: "
                 + circle.getAreaFormula());
-        view.printMessageWithNewLine("Circle perimeter formula: "
+        this.view.printMessageWithNewLine("Circle perimeter formula: "
                 + circle.getPerimeterFormula());
     }
 
     private void triangleFormula() {
         Triangle triangle = new Triangle();
-        view.printMessageWithNewLine("Triangle area formula: "
+        this.view.printMessageWithNewLine("Triangle area formula: "
                 + triangle.getAreaFormula());
-        view.printMessageWithNewLine("Triangle perimeter formula: "
+        this.view.printMessageWithNewLine("Triangle perimeter formula: "
                 + triangle.getPerimeterFormula());
     }
 
     private void equilateralTriangleFormula() {
         EquilateralTriangle equilateralTriangle = new EquilateralTriangle();
-        view.printMessageWithNewLine("Equilateral triangle area formula: "
+        this.view.printMessageWithNewLine("Equilateral triangle area formula: "
                 + equilateralTriangle.getAreaFormula());
-        view.printMessageWithNewLine("Equilateral triangle perimeter formula: "
+        this.view.printMessageWithNewLine("Equilateral triangle perimeter formula: "
                 + equilateralTriangle.getPerimeterFormula());
     }
 
     private void rectangleFormula() {
         Rectangle rectangle = new Rectangle();
-        view.printMessageWithNewLine("Rectangle area formula: "
+        this.view.printMessageWithNewLine("Rectangle area formula: "
                 + rectangle.getAreaFormula());
-        view.printMessageWithNewLine("Rectangle perimeter formula: "
+        this.view.printMessageWithNewLine("Rectangle perimeter formula: "
                 + rectangle.getPerimeterFormula());
     }
 
     private void squareFormula() {
         Square square = new Square();
-        view.printMessageWithNewLine("Square area formula: "
+        this.view.printMessageWithNewLine("Square area formula: "
                 + square.getAreaFormula());
-        view.printMessageWithNewLine("Square perimeter formula: "
+        this.view.printMessageWithNewLine("Square perimeter formula: "
                 + square.getPerimeterFormula());
     }
 
     private void regularPentagonFormula() {
         RegularPentagon regularPentagon = new RegularPentagon();
-        view.printMessageWithNewLine("Regular pentagon area formula: " + regularPentagon.getAreaFormula());
-        view.printMessageWithNewLine("Regular pentagon formula: " + regularPentagon.getPerimeterFormula());
+        this.view.printMessageWithNewLine("Regular pentagon area formula: " + regularPentagon.getAreaFormula());
+        this.view.printMessageWithNewLine("Regular pentagon formula: " + regularPentagon.getPerimeterFormula());
     }
 }

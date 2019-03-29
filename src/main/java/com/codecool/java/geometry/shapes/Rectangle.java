@@ -37,11 +37,11 @@ public class Rectangle extends Shape {
     }
 
     float getA() {
-        return a;
+        return this.a;
     }
 
     float getB() {
-        return b;
+        return this.b;
     }
 
     @Override

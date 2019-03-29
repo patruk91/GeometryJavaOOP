@@ -11,7 +11,7 @@ public class TableFormatter {
     private int sum;
     private List<Shape> shapes;
 
-    public TableFormatter(List<Shape> shapes){
+    TableFormatter(List<Shape> shapes){
         this.format = "";
         this.sum = 0;
         this.shapes = shapes;
@@ -29,15 +29,15 @@ public class TableFormatter {
         this.format += "%n";
     }
 
-    public String getFormat() {
-        return format;
+    String getFormat() {
+        return this.format;
     }
 
-    public int getSum() {
-        return sum;
+    int getSum() {
+        return this.sum;
     }
 
-    public String getTableString(String format, int sum) {
+    String getTableString(String format, int sum) {
         StringBuilder stringBuilder = new StringBuilder();
         int extraSpaces = 7 + 7; //vertical line, spaces
         int i = 0;

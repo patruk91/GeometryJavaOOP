@@ -35,7 +35,7 @@ public class RegularPentagon extends Shape {
     }
 
     float getA() {
-        return a;
+        return this.a;
     }
 
     @Override

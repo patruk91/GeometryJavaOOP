@@ -3,8 +3,6 @@ package com.codecool.java.geometry.containers;
 import com.codecool.java.geometry.shapes.Circle;
 import com.codecool.java.geometry.shapes.Shape;
 
-import java.math.RoundingMode;
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
